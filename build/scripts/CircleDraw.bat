@@ -84,7 +84,6 @@ set CMD_LINE_ARGS=%*
 
 set CLASSPATH=%APP_HOME%\lib\CircleDraw-1.0-SNAPSHOT.jar
 
-
 @rem Execute CircleDraw
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CIRCLE_DRAW_OPTS%  -classpath "%CLASSPATH%" Main %CMD_LINE_ARGS%
 
