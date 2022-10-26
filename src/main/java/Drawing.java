@@ -1,3 +1,8 @@
+import Shapes.Square;
+import Shapes.Circle;
+import Shapes.Rect;
+import Shapes.Shape;
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
