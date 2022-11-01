@@ -6,6 +6,7 @@ import Shapes.Shape;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 public class Drawing extends Canvas {
     // A private field called f of AWT class Frame..
@@ -13,16 +14,30 @@ public class Drawing extends Canvas {
     private Circle circ;
     private Rect rect;
     private Square square;
+    private ArrayList<Shape> shapes=new ArrayList<>();
 
     // The constructor
     public Drawing(){
         Point p= new Point(200,200);
         Point p2= new Point(100, 100);
+        Point p3= new Point(300, 100);
         Color c= new Color(0x992266);// The RGB number comprises three bytes: red, green and blue
         Color c2= new Color(0x592266);
+        Color c3= new Color(0x995696);
         circ = new Circle(p,c,50);
         rect = new Rect(p2,c2,60,40);
-        square = new Square(p2,c2,50);
+        square = new Square(p3,c3,50);
+
+
+        for (int i=0;i<100;i=i+10){
+            //Point p4 = new Point(i,i);
+            //Circle temp = new Circle(p4, c3, 30);
+            //shapes.add(temp);
+
+            shapes.add(circ);
+            shapes.add(rect);
+            shapes.add(square);
+        }
 
         setupFrame();
         setupCanvas();
@@ -48,9 +63,11 @@ public class Drawing extends Canvas {
 
 
     public void paint(Graphics g){
-        circ.draw(g);
-        //rect.draw(g);
-        square.draw(g);
+
+        for (Shape s: shapes){
+            s.draw(g);
+        }
+
     }
 
 }
